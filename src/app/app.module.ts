@@ -14,10 +14,10 @@ import { DemoComponent } from './components/demo/demo.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 // Firebase
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { environment } from '../environments/environment';
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, DemoComponent, LayoutComponent],
