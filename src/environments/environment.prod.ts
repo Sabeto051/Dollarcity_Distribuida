@@ -8,7 +8,7 @@ export const environment = {
     // storageBucket: 'platzi-store-7d8ad.appspot.com',
     // messagingSenderId: '864108017899',
     // appId: '1:864108017899:web:3ecf21b2bae5ad29f5e6ae',
-    space: 'jtleigjxs00i',
-    accessToken: 'IG_hT2-83sdOr8oFdvpz0Rd9NCyhZ1SM9tgHqMlgdGo',
   },
+  space: 'jtleigjxs00i',
+  accessToken: 'IG_hT2-83sdOr8oFdvpz0Rd9NCyhZ1SM9tgHqMlgdGo',
 };
