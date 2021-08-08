@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // import { ProductsService } from 'src/app/modules/core/services/products/products.service';
 import { CartService } from '../../../core/services/cart/cart.service';
 import { ContentfulService } from '../../../core/services/contentful/contentful.service';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -23,8 +23,8 @@ export class ProductsComponent implements OnInit {
   }
 
   clickProduct(id: string) {
-    // const product = this.products.find((prod) => prod.id === id);
-    // this.cartService.addCart(product);
+    const product = this.products.find((prod) => prod['sys']['id'] === id);
+    this.cartService.addCart(product);
   }
 
   fetchProducts() {

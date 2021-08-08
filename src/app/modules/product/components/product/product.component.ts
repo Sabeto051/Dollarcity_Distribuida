@@ -20,6 +20,6 @@ export class ProductComponent implements OnInit {
   ngOnInit() {}
 
   addCart() {
-    this.productClicked.emit(this.product['fields']['nombre']);
+    this.productClicked.emit(this.product['sys']['id']);
   }
 }
