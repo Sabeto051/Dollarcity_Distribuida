@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/modules/core/models/product.model';
-import { ProductsService } from 'src/app/modules/core/services/products/products.service';
+// import { Product } from 'src/app/modules/core/models/product.model';
+// import { ProductsService } from 'src/app/modules/core/services/products/products.service';
 import { CartService } from '../../../core/services/cart/cart.service';
+import { ContentfulService } from '../../../core/services/contentful/contentful.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -9,10 +11,10 @@ import { CartService } from '../../../core/services/cart/cart.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  products: Product[] = [];
+  products: any[] = [];
 
   constructor(
-    private productsService: ProductsService,
+    private contentfulService: ContentfulService,
     private cartService: CartService
   ) {}
 
@@ -21,18 +23,14 @@ export class ProductsComponent implements OnInit {
   }
 
   clickProduct(id: string) {
-    const product = this.products.find((prod) => prod.id === id);
-    this.cartService.addCart(product);
+    // const product = this.products.find((prod) => prod.id === id);
+    // this.cartService.addCart(product);
   }
 
   fetchProducts() {
-    this.productsService.getAllProducts().subscribe((products) => {
-      this.products = products;
-    });
-  }
-  createAllProducts() {
-    this.productsService.createAllProductsDev().then((res) => {
-      this.fetchProducts();
+    this.contentfulService.getProducts('producto').subscribe((res) => {
+      this.products = res;
+      console.log(this.products);
     });
   }
 }

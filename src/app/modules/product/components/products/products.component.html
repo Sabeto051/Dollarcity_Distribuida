@@ -1,11 +1,3 @@
-<button
-  *ngIf="products.length === 0"
-  mat-raised-button
-  (click)="createAllProducts()"
->
-  Create All Products Again
-</button>
-
 <div class="product-grid">
   <app-product
     *ngFor="let product of products"
