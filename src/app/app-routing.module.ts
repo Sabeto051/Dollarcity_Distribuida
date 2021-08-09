@@ -8,10 +8,12 @@ import { SharedModule } from './modules/shared/shared.module';
 import { AdminGuard } from './guardians/admin/admin.guard';
 import { OrderComponent } from './modules/order/components/order/order.component';
 import { OrderModule } from './modules/order/order.module';
+import { CognitoGuard } from './guardians/cognito/cognito.guard';
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [CognitoGuard],
     component: LayoutComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: '/home' },
