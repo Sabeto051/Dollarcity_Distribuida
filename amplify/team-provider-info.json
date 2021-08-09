@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dollarcity-dev-205430-authRole",
+      "UnauthRoleArn": "arn:aws:iam::233052408775:role/amplify-dollarcity-dev-205430-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::233052408775:role/amplify-dollarcity-dev-205430-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-dollarcity-dev-205430-deployment",
+      "UnauthRoleName": "amplify-dollarcity-dev-205430-unauthRole",
+      "StackName": "amplify-dollarcity-dev-205430",
+      "StackId": "arn:aws:cloudformation:us-east-2:233052408775:stack/amplify-dollarcity-dev-205430/bee91480-f8b4-11eb-9e7e-022e7fe709ee",
+      "AmplifyAppId": "d6wtcmhz5r96s"
+    },
+    "categories": {
+      "auth": {
+        "dollarcity9d3051e2": {}
+      }
+    }
+  }
+}
