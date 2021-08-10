@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth/auth.service';
+import { CognitoService } from 'src/app/modules/core/services/cognito/cognito.service';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +12,9 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private authService: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private congito: CognitoService
   ) {
     this.buildForm();
   }
@@ -25,14 +25,20 @@ export class RegisterComponent implements OnInit {
     event.preventDefault();
     if (this.form.valid) {
       const value = this.form.value;
-      this.authService.createUser(value.email, value.password).then(() => {
-        this.router.navigate(['/auth/login']);
-      });
+      // this.authService.createUser(value.email, value.password).then(() => {
+      //   this.router.navigate(['/auth/login']);
+      // });
+      this.congito
+        .signUp(value.username, value.email, value.password)
+        .then(() => {
+          this.router.navigate(['/auth/register/', value.username]);
+        });
     }
   }
 
   private buildForm() {
     this.form = this.formBuilder.group({
+      username: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });

@@ -6,8 +6,6 @@ import { SharedModule } from './modules/shared/shared.module';
 
 // Guardians
 import { AdminGuard } from './guardians/admin/admin.guard';
-import { OrderComponent } from './modules/order/components/order/order.component';
-import { OrderModule } from './modules/order/order.module';
 import { CognitoGuard } from './guardians/cognito/cognito.guard';
 
 const routes: Routes = [
@@ -16,7 +14,7 @@ const routes: Routes = [
     canActivate: [CognitoGuard],
     component: LayoutComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: '/home' },
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
       {
         path: 'home',
         loadChildren: () =>
@@ -49,12 +47,12 @@ const routes: Routes = [
   //   loadChildren: () =>
   //     import('./modules/admin/admin.module').then((m) => m.AdminModule),
   // },
-  // {
-  //   path: 'auth',
-  //   loadChildren: () =>
-  //     import('./modules/auth/auth.module').then((m) => m.AuthModule),
-  // },
-  { path: 'demo', component: DemoComponent },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  // { path: 'demo', component: DemoComponent },
   {
     path: '**',
     loadChildren: () =>

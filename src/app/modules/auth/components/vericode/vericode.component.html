@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="confirmSignUp($event)">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title
+        >Ingresa el código de verificación que llegó a tu correo</mat-card-title
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              placeholder="Verification code"
+              formControlName="vericode"
+              matInput
+              type="text"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="form.invalid" mat-raised-button type="submit">
+        Inicia sesión
+      </button>
+    </mat-card-actions>
+    <h3>Reenviar código de verificación</h3>
+    <button mat-raised-button color="primary" (click)="resendCode()">
+      Reenviar
+    </button>
+  </mat-card>
+</form>

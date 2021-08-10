@@ -7,9 +7,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 import { MaterialModule } from './../material/material.module';
+import { VericodeComponent } from './components/vericode/vericode.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, VericodeComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
