@@ -2,15 +2,20 @@
   <div class="container">
     <div class="row between-xs middle-xs header-row">
       <nav>
-        <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-        <a mat-button routerLink="/products" routerLinkActive="active"
+        <a mat-button routerLink="/home" routerLinkActive="activeNav">Home</a>
+        <a mat-button routerLink="/products" routerLinkActive="activeNav"
           >Products</a
         >
-        <a mat-button routerLink="/contact" routerLinkActive="active"
+        <a mat-button routerLink="/contact" routerLinkActive="activeNav"
           >Contact</a
         >
       </nav>
-      <button mat-raised-button color="primary" (click)="logout()">
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="logout()"
+        style="color: white"
+      >
         Cerrar sesión
       </button>
       <a
