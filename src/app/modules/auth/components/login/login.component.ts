@@ -39,6 +39,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // facebook() {
+  //   this.cognito.signInFacebook();
+  // }
+
   private buildForm() {
     this.form = this.formBuilder.group({
       username: ['', [Validators.required]],

@@ -85,4 +85,8 @@ export class CognitoService {
       return false;
     }
   }
+
+  // async signInFacebook(){
+  //   Auth.federatedSignIn({provider: 'Facebook'})
+  // }
 }
